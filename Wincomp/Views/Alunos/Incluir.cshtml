@@ -1,0 +1,30 @@
+﻿@model Wincomp.Models.Aluno
+@{
+    ViewBag.Title = "Incluir";
+}
+
+<h2>Incluir novo aluno</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>Aluno</h4>
+        <hr />
+        <div class="form-group">
+            <div class="col-md-10">
+                Nome
+                @Html.EditorFor(model => model.NomeAluno, new { htmlAtributes = new { @class = "form-control" } })
+                Email
+                @Html.EditorFor(model => model.Email, new { htmlAtributes = new { @class = "form-control" } })
+                Data
+                @Html.EditorFor(model => model.Data, new { htmlAtributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+

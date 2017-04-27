@@ -6,7 +6,7 @@ using Wincomp.Models;
 
 namespace Wincomp.DAL
 {
-    public class WincompInitializez: System.Data.Entity.DropCreateDatabaseIfModelChanges<WincompDbContext>
+    public class WincompInitializer: System.Data.Entity.DropCreateDatabaseIfModelChanges<WincompDbContext>
     {
         protected override void Seed(WincompDbContext context)
         {
@@ -30,9 +30,9 @@ namespace Wincomp.DAL
             {
                 new Matricula(){AlunoID=1, TreinamentoID=1, Grade=Grade.A},
                 new Matricula(){AlunoID=1, TreinamentoID=2, Grade=Grade.B},
-                new Matricula(){AlunoID=1, TreinamentoID=1, Grade=Grade.A},
-                new Matricula(){AlunoID=1, TreinamentoID=2, Grade=Grade.B},
-                new Matricula(){AlunoID=1, TreinamentoID=3, Grade=Grade.C},
+                new Matricula(){AlunoID=2, TreinamentoID=1, Grade=Grade.A},
+                new Matricula(){AlunoID=2, TreinamentoID=2, Grade=Grade.B},
+                new Matricula(){AlunoID=2, TreinamentoID=3, Grade=Grade.C},
                 new Matricula(){AlunoID=3, TreinamentoID=3, Grade=Grade.D},
 
             };

@@ -1,0 +1,25 @@
+﻿@model Wincomp.Models.Aluno
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar Aluno</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>Aluno</h4><hr />
+        @Html.HiddenFor(model => model.AlunoID)
+        <div class="form-group">
+            Nome
+            @Html.EditorFor(model =>model.NomeAluno,new {htmlAtributes=new {@class= "form-control" } })
+            Email
+            @Html.EditorFor(model => model.Email, new { htmlAtributes = new { @class = "form-control" } })
+            Data
+            @Html.EditorFor(model => model.Data, new { htmlAtributes = new { @class = "form-control" } })
+            <br /><input type="submit" value="Salvar" class="btn btn-default" />
+        </div>
+    </div>
+}
+

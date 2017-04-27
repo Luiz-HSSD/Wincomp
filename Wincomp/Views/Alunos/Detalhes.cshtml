@@ -1,0 +1,43 @@
+﻿@model Wincomp.Models.Aluno
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes do Aluno</h2>
+<div>
+    <h4>Aluno</h4>
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>Aluno :</dt>
+        <dd>@Html.DisplayFor(model => model.NomeAluno)</dd>
+
+        <dt>Email :</dt>
+        <dd>@Html.DisplayFor(model => model.Email)</dd>
+
+        <dt>Data :</dt>
+        <dd>@Html.DisplayFor(model => model.Data)</dd>
+        <br />
+        <dt>Matriculas</dt>
+        <br />
+        <dd>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Treinamentos</th><th>Créditos</th><th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Matriculas)
+                    {
+                        <tr>
+                            <td>@Html.(modelItem => item.Treinamento.Titulo)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Treinamento.Creditos)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Grade)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </dd>
+    </dl>
+</div>
+

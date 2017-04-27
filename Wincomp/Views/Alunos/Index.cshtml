@@ -3,7 +3,8 @@
     ViewBag.Title = "Index";
 }
 
-<h2>I can hear you</h2>
+<h2>Lista de alunos</h2>
+<p>@Html.ActionLink("Incluir Aluno", "Incluir")</p>
 <table class="table">
     <thead>
         <tr>
@@ -19,6 +20,11 @@
             <td>@Html.DisplayFor(modelItem => item.NomeAluno)</td>
             <td>@Html.DisplayFor(modelItem => item.Email)</td>
             <td>@Html.DisplayFor(modelItem => item.Data)</td>
+            <td>
+                @Html.ActionLink("Detalhes", "Detalhes", new { id=item.AlunoID })
+                @Html.ActionLink("Editar", "Editar", new { id = item.AlunoID })
+                @Html.ActionLink("Excluir", "Excluir", new { id = item.AlunoID })
+            </td>
         </tr>
         }
     </tbody>

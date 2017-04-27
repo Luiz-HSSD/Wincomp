@@ -150,7 +150,7 @@
     <Compile Include="Controllers\AlunosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\WincompDbContext.cs" />
-    <Compile Include="DAL\WincompInitializez.cs" />
+    <Compile Include="DAL\WincompInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -204,6 +204,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Cursos\Index.cshtml" />
     <Content Include="Views\Alunos\Index.cshtml" />
+    <Content Include="Views\Alunos\Detalhes.cshtml" />
+    <Content Include="Views\Alunos\Editar.cshtml" />
+    <Content Include="Views\Alunos\Incluir.cshtml" />
+    <Content Include="Views\Alunos\Excluir.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
