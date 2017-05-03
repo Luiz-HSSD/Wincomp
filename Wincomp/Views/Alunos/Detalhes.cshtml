@@ -11,6 +11,9 @@
         <dt>Aluno :</dt>
         <dd>@Html.DisplayFor(model => model.NomeAluno)</dd>
 
+        <dt>Sobrenome :</dt>
+        <dd>@Html.DisplayFor(model => model.SobrenomeAluno)</dd>
+
         <dt>Email :</dt>
         <dd>@Html.DisplayFor(model => model.Email)</dd>
 
@@ -30,7 +33,7 @@
                     @foreach (var item in Model.Matriculas)
                     {
                         <tr>
-                            <td>@Html.(modelItem => item.Treinamento.Titulo)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Treinamento.Titulo)</td>
                             <td>@Html.DisplayFor(modelItem => item.Treinamento.Creditos)</td>
                             <td>@Html.DisplayFor(modelItem => item.Grade)</td>
                         </tr>
