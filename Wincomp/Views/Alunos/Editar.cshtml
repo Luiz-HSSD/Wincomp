@@ -14,13 +14,11 @@
         <div class="form-group">
             Nome
             @Html.EditorFor(model =>model.NomeAluno,new {htmlAtributes=new {@class= "form-control" } })
-            Sobrenome
-            @Html.EditorFor(model => model.SobrenomeAluno, new { htmlAtributes = new { @class = "form-control" } })
             Email
             @Html.EditorFor(model => model.Email, new { htmlAtributes = new { @class = "form-control" } })
             Data
             @Html.EditorFor(model => model.Data, new { htmlAtributes = new { @class = "form-control" } })
-            <br /><input type="submit" value="Editar" class="btn btn-default" />
+            <br /><input type="submit" value="Salvar" class="btn btn-default" />
         </div>
     </div>
 }

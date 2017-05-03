@@ -1,25 +1,16 @@
-﻿@using PagedList.Mvc;
-@model PagedList.IPagedList<Wincomp.Models.Aluno>
+﻿@model IEnumerable<Wincomp.Models.Aluno>
 @{
     ViewBag.Title = "Index";
 }
-<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css"/>
+
 <h2>Lista de alunos</h2>
 <p>@Html.ActionLink("Incluir Aluno", "Incluir")</p>
-@using (Html.BeginForm())
-{
-    <p>
-        Filtrar pelo nome: @Html.TextBox("BuscaNome")
-        <input type="submit" value="Filtrar"/>
-    </p>
-}
 <table class="table">
     <thead>
         <tr>
-            <th>@Html.ActionLink("Nome", "Index", new { ordem = ViewBag.OrdemNome })</th>
-            <th>Sobrenome</th>
-            <th>Email</th>
-            <th>@Html.ActionLink("Data", "Index", new { ordem = ViewBag.OrdemData })</th>
+            <th>@Html.DisplayNameFor(model =>model.NomeAluno )</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Data)</th>
         </tr>
     </thead>
     <tbody>
@@ -27,7 +18,6 @@
         {
         <tr>
             <td>@Html.DisplayFor(modelItem => item.NomeAluno)</td>
-            <td>@Html.DisplayFor(modelItem => item.SobrenomeAluno)</td>
             <td>@Html.DisplayFor(modelItem => item.Email)</td>
             <td>@Html.DisplayFor(modelItem => item.Data)</td>
             <td>
@@ -39,5 +29,3 @@
         }
     </tbody>
 </table>
-Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
-@Html.PagedListPager(Model, page => Url.Action("Index", new {page,ordem=ViewBag.Ordenacao}) )
