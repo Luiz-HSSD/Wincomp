@@ -12,9 +12,9 @@ namespace Wincomp.DAL
         {
             var alunos = new List<Aluno>
             {
-                new Aluno(){AlunoID=1, NomeAluno="João", Email="joao@wincomp.com.br",Data=DateTime.Parse("2014-02-25")},
-                new Aluno(){AlunoID=2, NomeAluno="José", Email="josé@wincomp.com.br",Data=DateTime.Parse("2014-03-26")},
-                new Aluno(){AlunoID=3, NomeAluno="Maria", Email="maria@wincomp.com.br",Data=DateTime.Parse("2014-04-27")}
+                new Aluno(){AlunoID=1, NomeAluno="João", SobrenomeAluno="Silva", Email="joao@wincomp.com.br",Data=DateTime.Parse("2014-02-25")},
+                new Aluno(){AlunoID=2, NomeAluno="José", SobrenomeAluno=" Oliveira", Email="josé@wincomp.com.br",Data=DateTime.Parse("2014-03-26")},
+                new Aluno(){AlunoID=3, NomeAluno="Maria", SobrenomeAluno="Cruz", Email="maria@wincomp.com.br",Data=DateTime.Parse("2014-04-27")}
             };
             alunos.ForEach(s => context.Alunos.Add(s));
             context.SaveChanges();
