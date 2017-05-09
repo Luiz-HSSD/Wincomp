@@ -17,6 +17,7 @@ namespace Wincomp.DAL
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Treinamento> Treinamentos { get; set; }
         public DbSet<Matricula> Matriculas { get; set; }
+        public DbSet<Departamento> Departamentos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

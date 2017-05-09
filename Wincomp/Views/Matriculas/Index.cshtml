@@ -1,0 +1,47 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<Wincomp.Models.Matricula>
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<h2>Lista de Matriculas</h2>
+<p>@Html.ActionLink("Incluir Matrícula", "Incluir")</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Filtrar pelo nome: @Html.TextBox("BuscaNome")
+        <input type="submit" value="Filtrar" />
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.ActionLink("Nome", "Index", new { ordem = ViewBag.OrdemNome })</th>
+            <th>@Html.ActionLink("Departamento", "Index", new { ordem = ViewBag.OrdemDepartamento }) </th>
+            <th>@Html.ActionLink("Treinamento", "Index", new { ordem = ViewBag.OrdemTreinamento }) </th>
+            <th>Grade</th>
+            <th>@Html.ActionLink("Data da matricula", "Index", new { ordem = ViewBag.OrdemData })</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Aluno.NomeAluno)</td>
+                <td>@Html.DisplayFor(modelItem => item.Treinamento.Departamento.DepartamentoNome)</td>
+                <td>@Html.DisplayFor(modelItem => item.Treinamento.Titulo)</td>
+                <td>@Html.DisplayFor(modelItem => item.Grade)</td>
+                <td>@Html.DisplayFor(modelItem => item.DataMatricula)</td>
+                <!--
+                <td>
+                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.MatriculaID}) |
+                    @Html.ActionLink("Editar", "Editar", new { id = item.TreinamentoID }) |
+                    @Html.ActionLink("Excluir", "Excluir", new { id = item.TreinamentoID })
+                </td>
+                    --> 
+            </tr>
+        }
+    </tbody>
+</table>
+Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, ordem = ViewBag.Ordenacao }))

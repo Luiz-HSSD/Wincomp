@@ -1,8 +1,43 @@
-﻿
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<Wincomp.Models.Treinamento>
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>I can hear you</h2>
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<h2>Lista de Treinamentos</h2>
+<p>@Html.ActionLink("Incluir Treinamento", "Incluir")</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Filtrar pelo nome: @Html.TextBox("BuscaNome")
+        <input type="submit" value="Filtrar" />
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.ActionLink("Nome Departamento", "Index", new { ordem = ViewBag.OrdemDepartamento })</th>
+            <th>@Html.ActionLink("Nome do Treinamento", "Index", new { ordem = ViewBag.OrdemNome }) </th>
+            <th>@Html.ActionLink("Créditos", "Index", new { ordem = ViewBag.OrdemCreditos })</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Departamento.DepartamentoNome)</td>
+                <td>@Html.DisplayFor(modelItem => item.Titulo)</td>
+                <td>@Html.DisplayFor(modelItem => item.Creditos)</td>
+                <td>
+                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.TreinamentoID }) |
+                    @Html.ActionLink("Editar", "Editar", new { id = item.TreinamentoID }) |
+                    @Html.ActionLink("Excluir", "Excluir", new { id = item.TreinamentoID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, ordem = ViewBag.Ordenacao }))
 
 

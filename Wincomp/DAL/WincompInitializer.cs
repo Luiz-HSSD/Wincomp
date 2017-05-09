@@ -18,22 +18,30 @@ namespace Wincomp.DAL
             };
             alunos.ForEach(s => context.Alunos.Add(s));
             context.SaveChanges();
+            var departamentos = new List<Departamento>
+            {
+                new Departamento{DepartamentoID=1, DepartamentoNome="Matemática"},
+                new Departamento{DepartamentoID=2, DepartamentoNome="Informática"},
+                new Departamento{DepartamentoID=3, DepartamentoNome="Física"}
+            };
+            departamentos.ForEach(s => context.Departamentos.Add(s));
+            context.SaveChanges();
             var treinamentos = new List<Treinamento>()
             {
-                new Treinamento(){TreinamentoID=1,Titulo="C# básico",Creditos=2},
-                new Treinamento(){TreinamentoID=2,Titulo="ASP .NET Web Forms",Creditos=3},
-                new Treinamento(){TreinamentoID=3,Titulo="ASP .NET MVC",Creditos=5},
+                new Treinamento(){TreinamentoID=1, DepartamentoID=1, Titulo="C# básico",Creditos=2},
+                new Treinamento(){TreinamentoID=2, DepartamentoID=2, Titulo="ASP .NET Web Forms",Creditos=3},
+                new Treinamento(){TreinamentoID=3, DepartamentoID=3, Titulo="ASP .NET MVC",Creditos=5},
             };
             treinamentos.ForEach(s => context.Treinamentos.Add(s));
             context.SaveChanges();
             var matriculas = new List<Matricula>()
             {
-                new Matricula(){AlunoID=1, TreinamentoID=1, Grade=Grade.A},
-                new Matricula(){AlunoID=1, TreinamentoID=2, Grade=Grade.B},
-                new Matricula(){AlunoID=2, TreinamentoID=1, Grade=Grade.A},
-                new Matricula(){AlunoID=2, TreinamentoID=2, Grade=Grade.B},
-                new Matricula(){AlunoID=2, TreinamentoID=3, Grade=Grade.C},
-                new Matricula(){AlunoID=3, TreinamentoID=3, Grade=Grade.D},
+                new Matricula(){AlunoID=1, TreinamentoID=1, Grade=Grade.A, DataMatricula=DateTime.Parse("2010-01-01")},
+                new Matricula(){AlunoID=1, TreinamentoID=2, Grade=Grade.B, DataMatricula=DateTime.Parse("2010-02-01")},
+                new Matricula(){AlunoID=2, TreinamentoID=1, Grade=Grade.A, DataMatricula=DateTime.Parse("2010-01-02")},
+                new Matricula(){AlunoID=2, TreinamentoID=2, Grade=Grade.B, DataMatricula=DateTime.Parse("2011-01-01")},
+                new Matricula(){AlunoID=2, TreinamentoID=3, Grade=Grade.C, DataMatricula=DateTime.Parse("2011-02-01")},
+                new Matricula(){AlunoID=3, TreinamentoID=3, Grade=Grade.D, DataMatricula=DateTime.Parse("2011-01-02")},
 
             };
             matriculas.ForEach(s => context.Matriculas.Add(s));

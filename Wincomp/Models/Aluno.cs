@@ -9,11 +9,12 @@ namespace Wincomp.Models
 {
     public class Aluno
     {
+        [Key]
         public int AlunoID { get; set; }
         [Required]
         [Column("Nome")]
         [StringLength(40, ErrorMessage = "Nome não pode ter mais de 40 caracteres")]
-        [Display(Name ="Nome")]
+        [Display(Name = "Nome")]
         public string NomeAluno { get; set; }
         public string Email { get; set; }
         [DataType(DataType.Date)]

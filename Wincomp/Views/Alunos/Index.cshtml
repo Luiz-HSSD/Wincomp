@@ -32,8 +32,8 @@
             <td>@Html.DisplayFor(modelItem => item.Data)</td>
             <td>
                 @Html.ActionLink("Detalhes", "Detalhes", new { id=item.AlunoID })
-                @Html.ActionLink("Editar", "Editar", new { id = item.AlunoID })
-                @Html.ActionLink("Excluir", "Excluir", new { id = item.AlunoID })
+               |@Html.ActionLink("Editar", "Editar", new { id = item.AlunoID })
+               |@Html.ActionLink("Excluir", "Excluir", new { id = item.AlunoID })
             </td>
         </tr>
         }

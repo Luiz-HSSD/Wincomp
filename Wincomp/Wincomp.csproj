@@ -154,13 +154,16 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AlunosController.cs" />
+    <Compile Include="Controllers\CursosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MatriculasController.cs" />
     <Compile Include="DAL\WincompDbContext.cs" />
     <Compile Include="DAL\WincompInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Aluno.cs" />
+    <Compile Include="Models\Departamento.cs" />
     <Compile Include="Models\Matricula.cs" />
     <Compile Include="Models\Treinamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -215,6 +218,11 @@
     <Content Include="Views\Alunos\Editar.cshtml" />
     <Content Include="Views\Alunos\Incluir.cshtml" />
     <Content Include="Views\Alunos\Excluir.cshtml" />
+    <Content Include="Views\Cursos\Incluir.cshtml" />
+    <Content Include="Views\Cursos\Editar.cshtml" />
+    <Content Include="Views\Cursos\Excuir.cshtml" />
+    <Content Include="Views\Cursos\Detalhes.cshtml" />
+    <Content Include="Views\Matriculas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
