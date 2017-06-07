@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Wincomp.Models.Departamento>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Departamentos</h2>
+<p>@Html.ActionLink("Incluir Departamento", "Incluir")</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model =>model.DepartamentoNome)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.DepartamentoNome)</td>
+                
+                <td>
+                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.DepartamentoID }) |
+                    @Html.ActionLink("Editar", "Editar", new { id = item.DepartamentoID }) |
+                    @Html.ActionLink("Excluir", "Excluir", new { id = item.DepartamentoID })
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+
+

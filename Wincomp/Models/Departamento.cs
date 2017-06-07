@@ -6,12 +6,13 @@ using System.Web;
 
 namespace Wincomp.Models
 {
-    public class Departamento
+    public partial class Departamento
     {
         [Key]
         public int DepartamentoID { get; set; }
-        [Display(Name ="Nome")]
+        [Display(Name = "Departamento")]
         public string DepartamentoNome { get; set; }
         public virtual ICollection<Departamento> Departamentos { get; set; }
+        public virtual ICollection<Treinamento> Treinamentos { get; set; }
     }
 }

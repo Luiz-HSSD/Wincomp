@@ -30,7 +30,11 @@ namespace Wincomp.DAL
             {
                 new Treinamento(){TreinamentoID=1, DepartamentoID=1, Titulo="C# básico",Creditos=2},
                 new Treinamento(){TreinamentoID=2, DepartamentoID=2, Titulo="ASP .NET Web Forms",Creditos=3},
-                new Treinamento(){TreinamentoID=3, DepartamentoID=3, Titulo="ASP .NET MVC",Creditos=5},
+                new Treinamento(){TreinamentoID=3, DepartamentoID=2, Titulo="ASP .NET MVC",Creditos=5},
+                new Treinamento(){TreinamentoID=4, DepartamentoID=3, Titulo="Física I",Creditos=1},
+                new Treinamento(){TreinamentoID=5, DepartamentoID=3, Titulo="Física II",Creditos=2},
+                new Treinamento(){TreinamentoID=6, DepartamentoID=3, Titulo="Física III",Creditos=3},
+                new Treinamento(){TreinamentoID=7, DepartamentoID=3, Titulo="Física IV",Creditos=4}
             };
             treinamentos.ForEach(s => context.Treinamentos.Add(s));
             context.SaveChanges();

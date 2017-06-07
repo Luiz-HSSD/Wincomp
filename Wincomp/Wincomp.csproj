@@ -154,7 +154,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AlunosController.cs" />
-    <Compile Include="Controllers\CursosController.cs" />
+    <Compile Include="Controllers\DepartamentosController.cs" />
+    <Compile Include="Controllers\TreinamentosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MatriculasController.cs" />
     <Compile Include="DAL\WincompDbContext.cs" />
@@ -212,17 +213,22 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Cursos\Index.cshtml" />
+    <Content Include="Views\Treinamentos\Index.cshtml" />
     <Content Include="Views\Alunos\Index.cshtml" />
     <Content Include="Views\Alunos\Detalhes.cshtml" />
     <Content Include="Views\Alunos\Editar.cshtml" />
     <Content Include="Views\Alunos\Incluir.cshtml" />
     <Content Include="Views\Alunos\Excluir.cshtml" />
-    <Content Include="Views\Cursos\Incluir.cshtml" />
-    <Content Include="Views\Cursos\Editar.cshtml" />
-    <Content Include="Views\Cursos\Excuir.cshtml" />
-    <Content Include="Views\Cursos\Detalhes.cshtml" />
+    <Content Include="Views\Treinamentos\Incluir.cshtml" />
+    <Content Include="Views\Treinamentos\Editar.cshtml" />
+    <Content Include="Views\Treinamentos\Excluir.cshtml" />
+    <Content Include="Views\Treinamentos\Detalhes.cshtml" />
     <Content Include="Views\Matriculas\Index.cshtml" />
+    <Content Include="Views\Departamentos\Index.cshtml" />
+    <Content Include="Views\Departamentos\Detalhes.cshtml" />
+    <Content Include="Views\Departamentos\Incluir.cshtml" />
+    <Content Include="Views\Departamentos\Excluir.cshtml" />
+    <Content Include="Views\Departamentos\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

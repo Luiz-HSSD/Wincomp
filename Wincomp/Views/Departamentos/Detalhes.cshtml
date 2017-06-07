@@ -1,0 +1,32 @@
+﻿@model Wincomp.Models.Departamento
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes do Departamento</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartamentoNome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DepartamentoNome)
+        </dd>
+    </dl>
+    <table>
+        @if (Model.Treinamentos.Count > 0)
+        {
+            <tr><td><b>Cursos deste Departamento</b></td></tr>
+            foreach(var curso in Model.Treinamentos)
+            {
+                <tr><td>@curso.Titulo</td></tr>
+            }
+        }
+    </table>
+    <br />
+</div>
+<p>
+    @Html.ActionLink("Excluir", "Excluir", new {id=Model.DepartamentoID}) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

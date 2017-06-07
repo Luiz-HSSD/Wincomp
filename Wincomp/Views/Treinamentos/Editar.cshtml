@@ -1,0 +1,42 @@
+﻿@model Wincomp.Models.Treinamento
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar Treinamento</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>Treinamento</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text_danger" })
+        @Html.HiddenFor(model =>model.TreinamentoID)
+        <div class="form-group">
+            @Html.LabelFor(model => model.Departamento, "Departamento", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("DepartamentoID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DepartamentoID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Titulo, "Nome Treinamento", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Titulo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Titulo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Creditos, "Créditos", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Creditos, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Creditos, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10" />
+            <input type="submit" value="Editar" class="btn btn-default" />
+        </div>
+    </div>
+}
+<div>@Html.ActionLink("Voltar", "Index")</div>
